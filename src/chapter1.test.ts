@@ -17,4 +17,7 @@ describe('Chapter1', () => {
     test('should return false for checkPermutation("aabbcc","aaabcc")', () => {
         expect(chapter1.checkPermutation('aabbcc', 'aaabcc')).toBe(false)
     })
+    test('should return true for urlify("Mr John Smith    ", 13)', () => {
+        expect(chapter1.urlify('Mr John Smith    ', 13)).toBe('Mr%20John%20Smith')
+    })
 })
