@@ -70,4 +70,32 @@ export class Chapter1 {
         }
         return counter;
     }
+    isAPalindromePermutation(string:string): boolean {
+        string = string.toLowerCase();
+        const charObject: any = {};
+        for(let i = 0; i < string.length; i++) {
+            if (string[i] == ' ') {
+                continue;
+            }
+            if (!charObject[string[i]]) {
+                charObject[string[i]] = 1;
+            } else {
+                charObject[string[i]]++;
+            }
+        }
+        let oddCounter = 0;
+        for (const property in charObject) {
+            if (this.isOddNumber(charObject[property])) {
+                if (oddCounter == 1) {
+                    return false;
+                }
+                oddCounter++;
+            }
+        }
+        return true;
+    }
+
+    isOddNumber(number: number):boolean {
+        return number % 2 == 0 ? false: true;
+    }
 }

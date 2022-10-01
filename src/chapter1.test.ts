@@ -20,4 +20,19 @@ describe('Chapter1', () => {
     test('should return true for urlify("Mr John Smith    ", 13)', () => {
         expect(chapter1.urlify('Mr John Smith    ', 13)).toBe('Mr%20John%20Smith')
     })
+    test('should return true for isAPalindromePermutation("Tact Coa")', () => {
+        expect(chapter1.isAPalindromePermutation('Tact Coa')).toBe(true)
+    })
+    test('should return true for isAPalindromePermutation("taco cat")', () => {
+        expect(chapter1.isAPalindromePermutation('taco cat')).toBe(true)
+    })
+    test('should return true for isAPalindromePermutation("atco cta")', () => {
+        expect(chapter1.isAPalindromePermutation('atco cta')).toBe(true)
+    })
+    test('should return true for isAPalindromePermutation("Dabale arroz a la zorra el abad")', () => {
+        expect(chapter1.isAPalindromePermutation('Dabale arroz a la zorra el abad')).toBe(true)
+    })
+    test('should return false for isAPalindromePermutation("Dabale carne a la zorra el abad")', () => {
+        expect(chapter1.isAPalindromePermutation('Dabale carne a la zorra el abad')).toBe(false)
+    })
 })
