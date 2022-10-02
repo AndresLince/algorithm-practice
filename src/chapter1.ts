@@ -42,7 +42,6 @@ export class Chapter1 {
 
         while (shortIndex >= 0) {
             if (string[shortIndex] == ' ') {
-                console.log(string[shortIndex])
                 string = this.setCharAt(string, longIndex, '0')
                 string = this.setCharAt(string, longIndex - 1, '2')
                 string = this.setCharAt(string, longIndex - 2, '%')
@@ -102,11 +101,9 @@ export class Chapter1 {
     oneEditAway(string1: string, string2: string): boolean {
         const length1 = string1.length;
         const length2 = string2.length;
-        console.log('llega')
         if (Math.abs(length1 - length2) > 1) {
             return false;
         }
-        console.log('llega')
         if (length1 == length2) {
             return this.validateOneEdit(string1, string2);
         }
@@ -147,5 +144,25 @@ export class Chapter1 {
             }
         }
         return true;
+    }
+
+    stringCompression(string: string): string {
+        let newString = ''
+        let letterCount = 0;
+        let lastLetter = string[0];
+        for (let i = 0;i < string.length; i++) {
+            if (string[i] != lastLetter) {
+                newString += lastLetter + letterCount;
+                letterCount = 0;
+            }
+            letterCount++;
+            lastLetter = string[i];
+        }
+        newString += lastLetter + letterCount;
+        if (newString.length > string.length) {
+            return string;
+        }
+
+        return newString;
     }
 }

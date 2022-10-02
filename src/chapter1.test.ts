@@ -62,4 +62,13 @@ describe('Chapter1', () => {
     test('should return false for oneEditAway("apple", "apleses")', () => {
         expect(chapter1.oneEditAway('apple', 'apleses')).toBe(false)
     })
+    test('should return "a2b1c4a3" for stringCompression("aabccccaaa")', () => {
+        expect(chapter1.stringCompression('aabccccaaa')).toBe('a2b1c4a3')
+    })
+    test('should return "a2b2a1b2c4a3" for stringCompression("aabbabbccccaaa")', () => {
+        expect(chapter1.stringCompression('aabbabbccccaaa')).toBe('a2b2a1b2c4a3')
+    })
+    test('should return false for stringCompression("aabbabbccccaaacdeal")', () => {
+        expect(chapter1.stringCompression('aabbabbccccaaacdeal')).toBe('aabbabbccccaaacdeal')
+    })
 })
