@@ -98,4 +98,54 @@ export class Chapter1 {
     isOddNumber(number: number):boolean {
         return number % 2 == 0 ? false: true;
     }
+
+    oneEditAway(string1: string, string2: string): boolean {
+        const length1 = string1.length;
+        const length2 = string2.length;
+        console.log('llega')
+        if (Math.abs(length1 - length2) > 1) {
+            return false;
+        }
+        console.log('llega')
+        if (length1 == length2) {
+            return this.validateOneEdit(string1, string2);
+        }
+
+        if (length1 < length2) {
+            return this.validateOneInsert(string1, string2);
+        }
+        if (length1 > length2) {
+            return this.validateOneInsert(string2, string1);
+        }
+    }
+
+    validateOneEdit(string1: string, string2: string): boolean {
+        let diffCount = 0;
+        for (let i = 0; i < string1.length; i++) {
+            if (string1[i] != string2[i]) {
+                if (diffCount == 1) {
+                    return false;
+                }
+                diffCount++;
+            }
+        }
+        return true;
+    }
+
+    validateOneInsert(string1: string, string2: string): boolean {
+        let index1 = 0;
+        let index2 = 0;
+        while (index2 < string2.length && index1 < string1.length ) {
+            if (string1[index1] != string2[index2]) {
+                if (index1 != index2) {
+                    return false;
+                }
+                index2++;
+            } else {
+                index1++;
+                index2++;
+            }
+        }
+        return true;
+    }
 }
