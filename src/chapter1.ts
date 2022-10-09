@@ -165,4 +165,27 @@ export class Chapter1 {
 
         return newString;
     }
+
+    rotateMatriz(matrix: Array<Array<number>>): Array<Array<number>> {
+        let n = matrix.length;
+        for(let layer = 0; layer < n / 2; layer++) {
+            let first = layer;
+            let last = n - 1 - layer;
+            for (let i = first; i < last; i++){
+                let offset = i - first;
+
+                let top = matrix[first][i];
+
+                // Left -> top
+                matrix[first][i] = matrix[last - offset][first];
+                // Botton -> left
+                matrix[last - offset][first] = matrix[last][last - offset];
+                // Right -> Botton
+                matrix[last][last - offset] = matrix[i][last];
+                // Top -> Right
+                matrix[i][last] = top;
+            }
+        }
+        return matrix;
+    }
 }
