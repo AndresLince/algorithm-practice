@@ -188,4 +188,40 @@ export class Chapter1 {
         }
         return matrix;
     }
+
+    zeroMatriz(matriz: Array<Array<number>>): Array<Array<number>> {
+        let arrayRows: Array<number> = [];
+        let arrayColumns: Array<number> = [];
+        for (let i = 0; i < matriz.length; i++) {
+            for (let j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] == 0) {
+                    if (!arrayRows[i]) {
+                        arrayRows.push(i)
+                    }
+                    if (!arrayColumns[j]) {
+                        arrayColumns.push(j)
+                    }
+                }
+            }
+        }
+        arrayRows.forEach(row => {
+            this.replaceRow(matriz, row, 0);
+        });
+        arrayColumns.forEach(column => {
+            this.replaceColumn(matriz, column, 0);
+        });
+
+        return matriz;
+    }
+
+    replaceColumn(matriz: Array<Array<number>>, column: number, value: number): void {
+        for (let i = 0; i < matriz.length; i++) {
+            matriz[i][column] = value;
+        }
+    }
+    replaceRow(matriz: Array<Array<number>>, row: number, value: number): void {
+        for (let i = 0; i < matriz[row].length; i++) {
+            matriz[row][i] = value;
+        }
+    }
 }
