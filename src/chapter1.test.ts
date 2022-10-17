@@ -137,4 +137,13 @@ describe('Chapter1', () => {
         ]
         expect(chapter1.zeroMatriz(matriz)).toStrictEqual(correctResult)
     })
+    test('should return true for stringRotation("watterbottle", "erbottlewatt")', () => {
+        expect(chapter1.stringRotation('watterbottle', 'erbottlewatt')).toBe(true)
+    })
+    test('should return false for stringRotation("watterbottle", "erbottlewatter")', () => {
+        expect(chapter1.stringRotation('watterbottle', 'erbottlewatter')).toBe(false)
+    })
+    test('should return false for stringRotation("", "")', () => {
+        expect(chapter1.stringRotation('', '')).toBe(false)
+    })
 })

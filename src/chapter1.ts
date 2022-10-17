@@ -224,4 +224,17 @@ export class Chapter1 {
             matriz[row][i] = value;
         }
     }
+    stringRotation(string: string, rotation: string): boolean {
+        if (string.length != rotation.length) {
+            return false;
+        }
+        if (string == '') {
+            return false
+        }
+        rotation = rotation + '' + rotation;
+        return this.isSubString(rotation, string);
+    }
+    isSubString(string: string, substring: string): boolean{
+        return string.includes(substring);
+    }
 }
