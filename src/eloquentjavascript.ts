@@ -11,12 +11,14 @@ export class EloquentJavascriptExercises {
         ######
         #######
     */
-    loopingATriangle(number: number = 7): void {
-        let triangle: string = '#';
-        while (triangle.length < number + 1) {
-            console.log(triangle);
-            triangle += '#';
+    loopingATriangle(number: number = 7): string {
+        let triangle: string = '';
+        let row: string = '';
+        while (row.length < number) {
+            row += '#';
+            triangle += row + '\n';
         }
+        return triangle;
     }
     /**
         FizzBuzz
@@ -32,24 +34,25 @@ export class EloquentJavascriptExercises {
         out a significant percentage of programmer candidates. So if you solved
         it, your labor market value just went up.)
      */
-    fizzBuzz(): void {
+    fizzBuzz(): string {
+        let result = '';
         for (let i = 1; i <= 100; i++) {
             let isDivisibleBy3 = (i % 3 == 0);
             let isDivisibleBy5 = (i % 5 == 0);
             if (isDivisibleBy3 && !isDivisibleBy5) {
-                console.log('Fizz');
+                result += 'Fizz' + '\n';
                 continue;
             }
             if (isDivisibleBy5 && !isDivisibleBy3) {
-                console.log('Buzz');
+                result += 'Buzz' + '\n';
                 continue;
             }
             if (isDivisibleBy5 && isDivisibleBy3) {
-                console.log('FizzBuzz');
+                result += 'FizzBuzz' + '\n';
                 continue;
             }
-            console.log(i);
         }
+        return result;
     }
     /**
         Write a program that creates a string that represents an 8×8 grid,
@@ -80,7 +83,6 @@ export class EloquentJavascriptExercises {
                 grid += this.createRow(width, '#', ' ');
             }
         }
-        console.log(grid);
         return grid;
     }
 
