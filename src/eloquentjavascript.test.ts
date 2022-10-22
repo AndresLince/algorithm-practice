@@ -22,4 +22,19 @@ describe('Chapter1', () => {
         let response = " # \n# #\n # \n# #\n # \n# #\n # \n# #\n";
         expect(exercises.createGrid(3, 8)).toBe(response)
     })
+    test('should return true for isEven(16)', () => {
+        expect(exercises.isEven(16)).toBe(true)
+    })
+    test('should return false for isEven(15)', () => {
+        expect(exercises.isEven(15)).toBe(false)
+    })
+    test('should return false for isEven(-5)', () => {
+        expect(exercises.isEven(-5)).toBe(false)
+    })
+    test('should return 2 for countBs("ABCDEFGCHbB")', () => {
+        expect(exercises.countBs("ABCDEFGCHbB")).toBe(2)
+    })
+    test('should return 0 for countBs("ACDFGHIJ")', () => {
+        expect(exercises.countBs("ACDFGHIJ")).toBe(0)
+    })
 });
