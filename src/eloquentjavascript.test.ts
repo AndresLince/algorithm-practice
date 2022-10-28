@@ -37,4 +37,15 @@ describe('Chapter1', () => {
     test('should return 0 for countBs("ACDFGHIJ")', () => {
         expect(exercises.countBs("ACDFGHIJ")).toBe(0)
     })
+    test('should return expectedResponse for exercises.range(1, 10, 2)', () => {
+        let expectedResponse = [1, 3, 5, 7, 9];
+        expect(exercises.range(1, 10, 2)).toStrictEqual(expectedResponse)
+    })
+    test('should return expectedResponse for exercises.range(5, 2, -1)', () => {
+        let expectedResponse = [5, 4, 3, 2];
+        expect(exercises.range(5, 2, -1)).toStrictEqual(expectedResponse)
+    })
+    test('should return 55 for exercises.sum(exercises.range(1, 10))', () => {
+        expect(exercises.sum(exercises.range(1, 10))).toBe(55)
+    })
 });
