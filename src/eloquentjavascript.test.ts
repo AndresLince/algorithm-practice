@@ -37,15 +37,23 @@ describe('Chapter1', () => {
     test('should return 0 for countBs("ACDFGHIJ")', () => {
         expect(exercises.countBs("ACDFGHIJ")).toBe(0)
     })
-    test('should return expectedResponse for exercises.range(1, 10, 2)', () => {
+    test('should return expectedResponse for range(1, 10, 2)', () => {
         let expectedResponse = [1, 3, 5, 7, 9];
         expect(exercises.range(1, 10, 2)).toStrictEqual(expectedResponse)
     })
-    test('should return expectedResponse for exercises.range(5, 2, -1)', () => {
+    test('should return expectedResponse for range(5, 2, -1)', () => {
         let expectedResponse = [5, 4, 3, 2];
         expect(exercises.range(5, 2, -1)).toStrictEqual(expectedResponse)
     })
-    test('should return 55 for exercises.sum(exercises.range(1, 10))', () => {
+    test('should return 55 for sum(range(1, 10))', () => {
         expect(exercises.sum(exercises.range(1, 10))).toBe(55)
+    })
+    test('should return [5, 4, 3, 2, 1] for reverseArray([1, 2, 3, 4, 5])', () => {
+        let expectedResponse = [5, 4, 3, 2, 1];
+        expect(exercises.reverseArray([1, 2, 3, 4, 5])).toStrictEqual(expectedResponse)
+    })
+    test('should return [5, 4, 3, 2, 1] for reverseArrayInPlace([1, 2, 3, 4, 5])', () => {
+        let expectedResponse = [5, 4, 3, 2, 1];
+        expect(exercises.reverseArrayInPlace([1, 2, 3, 4, 5])).toStrictEqual(expectedResponse);
     })
 });
