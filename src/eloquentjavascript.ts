@@ -151,4 +151,53 @@ export class EloquentJavascriptExercises {
         }
         return counter;
     }
+
+    /**
+        Exercises
+        The sum of a range
+        The introduction of this book alluded to the following as a nice way to
+        compute the sum of a range of numbers:
+        console.log(sum(range(1, 10)));
+        Write a range function that takes two arguments, start and end, and
+        returns an array containing all the numbers from start up to (and
+        including) end.
+        Next, write a sum function that takes an array of numbers and returns
+        the sum of these numbers. Run the example program and see whether it
+        does indeed return 55.
+        As a bonus assignment, modify your range function to take an optional
+        third argument that indicates the “step” value used when building the
+        array. If no step is given, the elements go up by increments of one,
+        corresponding to the old behavior. The function call range(1, 10, 2)
+        should return [1, 3, 5, 7, 9]. Make sure it also works with negative
+        step values so that range(5, 2, -1) produces [5, 4, 3, 2].
+     */
+    range(start: number, end: number, step: number = 1): Array<number> {
+        let range: Array<number> = [];
+        let operator = '+';
+        let comparator = '<=';
+        let operators = {
+            '+': (a: number, b: number) => a + b,
+            '-': (a: number, b: number) => a - b,
+        }
+        let comparators = {
+            '<=': (a: number, b: number) => a <= b,
+            '>=': (a: number, b: number) => a >= b,
+        }
+        if (step < 0) {
+            step = step * -1;
+            operator = '-';
+            comparator = '>=';
+        }
+        for (let i: any = start; comparators[comparator](i, end); i = operators[operator](i, step)) {
+            range.push(i);
+        }
+        return range;
+    }
+    sum(arrayOfNumbers: Array<number>): number {
+        let sum: number = 0;
+        arrayOfNumbers.forEach((element: any) => {
+            sum += element;
+        })
+        return sum;
+    }
 }
