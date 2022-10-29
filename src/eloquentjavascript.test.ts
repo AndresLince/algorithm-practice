@@ -1,4 +1,5 @@
 import { EloquentJavascriptExercises } from './eloquentjavascript'
+import { Node } from './LinkedList';
 
 describe('Chapter1', () => {
     let exercises = new EloquentJavascriptExercises();
@@ -55,5 +56,29 @@ describe('Chapter1', () => {
     test('should return [5, 4, 3, 2, 1] for reverseArrayInPlace([1, 2, 3, 4, 5])', () => {
         let expectedResponse = [5, 4, 3, 2, 1];
         expect(exercises.reverseArrayInPlace([1, 2, 3, 4, 5])).toStrictEqual(expectedResponse);
+    })
+    test('should return a valid linked list for arrayToList([1, 2, 3, 4, 5])', () => {
+        let expectedLinkedList = new Node(1);
+        expectedLinkedList.appendToTail(2);
+        expectedLinkedList.appendToTail(3);
+        expectedLinkedList.appendToTail(4);
+        expectedLinkedList.appendToTail(5);
+
+        expect(exercises.arrayToList([1, 2, 3, 4, 5])).toStrictEqual(expectedLinkedList);
+    })
+    test('should return a valid linked list for arrayToList([1])', () => {
+        let expectedLinkedList = new Node(1);
+
+        expect(exercises.arrayToList([1])).toStrictEqual(expectedLinkedList);
+    })
+    test('should return a valid array list for listToArray(linkedList)', () => {
+        let linkedList = new Node(1);
+        linkedList.appendToTail(2);
+        linkedList.appendToTail(3);
+        linkedList.appendToTail(4);
+        linkedList.appendToTail(5);
+        let expectedArray = [1, 2, 3 ,4, 5];
+
+        expect(exercises.listToArray(linkedList)).toStrictEqual(expectedArray);
     })
 });
