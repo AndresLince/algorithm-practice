@@ -278,4 +278,8 @@ export class EloquentJavascriptExercises {
         }
         return node;
     }
+    listToArray(linkedList: Node): Array<number> {
+        let newArray = linkedList.toArray(linkedList);
+        return newArray;
+    }
 }
