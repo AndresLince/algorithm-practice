@@ -81,4 +81,35 @@ describe('Chapter1', () => {
 
         expect(exercises.listToArray(linkedList)).toStrictEqual(expectedArray);
     })
+    test('should return false for deepEqual(linkedList1, linkedList2)', () => {
+        let linkedList = exercises.arrayToList([1, 2, 3, 4, 5]);
+        let linkedList2 = exercises.arrayToList([1, 2, 4, 5, 3]);
+
+        expect(exercises.deepEqual(linkedList, linkedList2)).toStrictEqual(false);
+    })
+    test('should return true for deepEqual(linkedList1, linkedList2)', () => {
+        let linkedList = exercises.arrayToList([1, 2, 3, 4, 5]);
+        let linkedList2 = exercises.arrayToList([1, 2, 3, 4, 5]);
+
+        expect(exercises.deepEqual(linkedList, linkedList2)).toStrictEqual(true);
+    })
+    test('should return true for deepEqual(null, null)', () => {
+        expect(exercises.deepEqual(null, null)).toStrictEqual(true);
+    })
+    test('should return false for deepEqual(linkedList1, null)', () => {
+        let linkedList = exercises.arrayToList([1, 2, 3, 4, 5]);
+
+        expect(exercises.deepEqual(linkedList, null)).toStrictEqual(false);
+    })
+    test('should return false for deepEqual(linkedList1, linkedList2)', () => {
+        let object1 = {
+            prop1: 'prop1',
+            prop2: 'prop2',
+        }
+        let object2 = {
+            prop1: 'prop1',
+        }
+
+        expect(exercises.deepEqual(object1, object2)).toStrictEqual(false);
+    })
 });
