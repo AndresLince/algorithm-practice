@@ -326,4 +326,17 @@ export class EloquentJavascriptExercises {
         }
         return true;
     }
+    /**
+        Flattening
+        Use the reduce method in combination with the concat method to
+        “flatten” an array of arrays into a single array that has all
+        the elements of the original arrays.
+     */
+    flattening(array: Array<Array<number>>): Array<number> {
+        const arrayResult = array.reduce(
+            (previousValue: Array<number>, currentValue: Array<number>) => previousValue.concat(currentValue),
+            []
+        );
+        return arrayResult;
+    }
 }
