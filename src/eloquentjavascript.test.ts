@@ -116,4 +116,8 @@ describe('Chapter1', () => {
         let expectedArray = [1, 2, 3, 4, 5, 6, 7, 8 , 9];
         expect(exercises.flattening([[1, 2, 3], [4, 5, 6], [7, 8, 9]])).toStrictEqual(expectedArray);
     })
+    test('should return a valid array for loop(value, testFunction, updatedFunction, bodyFunction)', () => {
+        let expectedArray = [3, 2, 1];
+        expect(exercises.loop(3, n => n > 0, n => n - 1, (value, array) => array.push(value))).toStrictEqual(expectedArray);
+    })
 });
