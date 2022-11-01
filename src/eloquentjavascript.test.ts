@@ -112,4 +112,8 @@ describe('Chapter1', () => {
 
         expect(exercises.deepEqual(object1, object2)).toStrictEqual(false);
     })
+    test('should return a valid array for flattening([[1, 2, 3], [4, 5, 6], [7, 8, 9]])', () => {
+        let expectedArray = [1, 2, 3, 4, 5, 6, 7, 8 , 9];
+        expect(exercises.flattening([[1, 2, 3], [4, 5, 6], [7, 8, 9]])).toStrictEqual(expectedArray);
+    })
 });
