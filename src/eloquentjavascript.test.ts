@@ -120,4 +120,22 @@ describe('Chapter1', () => {
         let expectedArray = [3, 2, 1];
         expect(exercises.loop(3, n => n > 0, n => n - 1, (value, array) => array.push(value))).toStrictEqual(expectedArray);
     })
+    test('should return true for every([1, 3, 5], testFunction)', () => {
+        expect(exercises.every([1, 3, 5], n => n < 10)).toBe(true);
+    })
+    test('should return false for every([1, 3, 5, 16], testFunction)', () => {
+        expect(exercises.every([1, 3, 5, 16], n => n < 10)).toBe(false);
+    })
+    test('should return true for every([1, 3, 5, 16], testFunction)', () => {
+        expect(exercises.every([], n => n < 10)).toBe(true);
+    })
+    test('should return true for everyWithSome([1, 3, 5], testFunction)', () => {
+        expect(exercises.everyWithSome([1, 3, 5], n => n < 10)).toBe(true);
+    })
+    test('should return false for everyWithSome([1, 3, 5, 16], testFunction)', () => {
+        expect(exercises.everyWithSome([1, 3, 5, 16], n => n < 10)).toBe(false);
+    })
+    test('should return true for everyWithSome([1, 3, 5, 16], testFunction)', () => {
+        expect(exercises.everyWithSome([], n => n < 10)).toBe(true);
+    })
 });
