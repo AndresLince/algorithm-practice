@@ -138,4 +138,10 @@ describe('Chapter1', () => {
     test('should return true for everyWithSome([1, 3, 5, 16], testFunction)', () => {
         expect(exercises.everyWithSome([], n => n < 10)).toBe(true);
     })
+    test('should return "ltr" for dominantDirection("Hello!")', () => {
+        expect(exercises.dominantDirection("Hello!")).toBe("ltr");
+    })
+    test('should return "rtl" for dominantDirection("Hey, مساء الخير")', () => {
+        expect(exercises.dominantDirection("Hey, مساء الخير")).toBe("rtl");
+    })
 });
