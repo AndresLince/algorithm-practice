@@ -144,4 +144,7 @@ describe('Chapter1', () => {
     test('should return "rtl" for dominantDirection("Hey, مساء الخير")', () => {
         expect(exercises.dominantDirection("Hey, مساء الخير")).toBe("rtl");
     })
+    test('should return "rtl" for dominantDirection("Hey, مساء الخير")', () => {
+        expect(exercises.dominantDirection("Hey hello how are you, مساء الخير")).toBe("ltr");
+    })
 });
