@@ -103,7 +103,7 @@ describe('Chapter1', () => {
         ]
         expect(chapter1.rotateMatriz(matrix)).toStrictEqual(correctResult)
     })
-    test('should return false for rotateMatriz(matrix)', () => {
+    test('should return false for zeroMatriz(matrix)', () => {
         let matriz = [
             [1, 2, 3, 4, 5],
             [6, 7, 0, 9, 10],
@@ -120,7 +120,7 @@ describe('Chapter1', () => {
         ]
         expect(chapter1.zeroMatriz(matriz)).toStrictEqual(correctResult)
     })
-    test('should return false for rotateMatriz(matrix)', () => {
+    test('should return false for zeroMatriz(matrix)', () => {
         let matriz = [
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],
