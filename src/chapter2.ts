@@ -15,4 +15,25 @@ export class Chapter2 {
         }
         return head;
     }
+    /**
+     * 2.2 Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
+    */
+    kthToLast(head: Node, kth: number) {
+        let runner: Node = head;
+        let counter = 0;
+        // Finding the node with a kth distance from the head
+        while(runner.next != null && counter < kth) {
+            runner = runner.next;
+            counter++;
+        }
+        if (counter < kth) {
+            return null;
+        }
+        let node: Node = head;
+        while (runner.next != null) {
+            node = node.next;
+            runner = runner.next;
+        }
+        return node;
+    }
 }
