@@ -36,4 +36,23 @@ export class Chapter2 {
         }
         return node;
     }
+    /**
+    * 2.3
+    * Delete Middle Node: Implement an algorithm to delete a node in the middle
+    * (i.e., any node but the first and last node, not necessarily the exact
+    * middle) of a singly linked list, given only access to that node.
+    */
+    deleteMiddleNode(head: Node) {
+        let runner = head;
+        let node = head;
+        while (runner.next != null) {
+            if (!runner.next.next) {
+                break;
+            }
+            runner = runner.next.next;
+            node = node.next;
+        }
+        return head.deleteNode(head, node.data)
+    }
+
 }
