@@ -15,6 +15,7 @@ import operators from "./operators";
 export class Vec{
     public x: number;
     public y: number;
+    public operators = operators.Operators;
     constructor(x: number, y: number){
         this.x = x;
         this.y = y;
@@ -29,8 +30,8 @@ export class Vec{
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
     operate(vec: Vec, operator: string) {
-        let x = operators.Operators[operator](this.x, vec.x);
-        let y = operators.Operators[operator](this.y, vec.y);
+        let x = this.operators[operator](this.x, vec.x);
+        let y = this.operators[operator](this.y, vec.y);
         let result = new Vec(x, y);
         return result;
     }
