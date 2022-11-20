@@ -31,4 +31,14 @@ describe('Chapter2', () => {
         let linkedList = eloquentjavascriptExercises.arrayToList([1, 2, 3]);
         expect(chapter2.kthToLast(linkedList, 5)).toBe(null)
     })
+    test('should return a valid linked list deleteMiddleNode(head)', () => {
+        let linkedList = eloquentjavascriptExercises.arrayToList([1, 2, 3]);
+        let expectedResult = eloquentjavascriptExercises.arrayToList([1, 3]);
+        expect(chapter2.deleteMiddleNode(linkedList)).toStrictEqual(expectedResult)
+    })
+    test('should return a valid linked list deleteMiddleNode(head)', () => {
+        let linkedList = eloquentjavascriptExercises.arrayToList([1, 2, 3, 4]);
+        let expectedResult = eloquentjavascriptExercises.arrayToList([1, 3, 4]);
+        expect(chapter2.deleteMiddleNode(linkedList)).toStrictEqual(expectedResult)
+    })
 });
