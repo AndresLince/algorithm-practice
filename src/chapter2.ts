@@ -54,5 +54,33 @@ export class Chapter2 {
         }
         return head.deleteNode(head, node.data)
     }
+    /**
+     * Partition: Write code to partition a linked list around a value x, such
+     * that all nodes less than x come before all nodes greater than or equal
+     * to x. If x is contained within the list, the values of x only need to be
+     * after the elements less than x (see below). The partition element x can
+     * appear anywhere in the "right partition"; it does not need to appear
+     * between the left and right partitions.
+     * EXAMPLE
+     * Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition= 5]
+     * Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+     */
+    partition(head: Node, partition: number) {
+        let node = head;
+        if (node == null) {
+            return null;
+        }
+        let newLinkedList = new Node(node.data);
+        while (node.next != null) {
+            if (node.next.data < partition) {
+                newLinkedList = newLinkedList.prepend(newLinkedList, node.next.data);
+            } else {
+                newLinkedList.appendToTail(node.next.data);
+            }
+
+            node = node.next;
+        }
+        return newLinkedList;
+    }
 
 }
