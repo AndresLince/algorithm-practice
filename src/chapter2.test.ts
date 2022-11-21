@@ -41,4 +41,9 @@ describe('Chapter2', () => {
         let expectedResult = eloquentjavascriptExercises.arrayToList([1, 3, 4]);
         expect(chapter2.deleteMiddleNode(linkedList)).toStrictEqual(expectedResult)
     })
+    test('should return a valid linked list partition(head, 5)', () => {
+        let linkedList = eloquentjavascriptExercises.arrayToList([3, 5, 8, 5, 10, 2, 1]);
+        let expectedResult = eloquentjavascriptExercises.arrayToList([1, 2, 3, 5, 8, 5, 10]);
+        expect(chapter2.partition(linkedList, 5)).toStrictEqual(expectedResult);
+    })
 });
