@@ -46,4 +46,7 @@ describe('Chapter2', () => {
         let expectedResult = eloquentjavascriptExercises.arrayToList([1, 2, 3, 5, 8, 5, 10]);
         expect(chapter2.partition(linkedList, 5)).toStrictEqual(expectedResult);
     })
+    test('should return null partition(null, 5)', () => {
+        expect(chapter2.partition(null, 5)).toBe(null);
+    })
 });
