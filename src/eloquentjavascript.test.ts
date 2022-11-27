@@ -147,4 +147,16 @@ describe('Chapter1', () => {
     test('should return "rtl" for dominantDirection("Hey, مساء الخير")', () => {
         expect(exercises.dominantDirection("Hey hello how are you, مساء الخير")).toBe("ltr");
     })
+    test('should return true borrowingMethod("one")',() => {
+        let map = { one: true, two: true };
+        expect(exercises.borrowingMethod(map, "one")).toBe(true);
+    })
+    test('should return true borrowingMethod("two")',() => {
+        let map = { one: true, two: true };
+        expect(exercises.borrowingMethod(map, "two")).toBe(true);
+    })
+    test('should return false borrowingMethod("four")',() => {
+        let map = { one: true, two: true };
+        expect(exercises.borrowingMethod(map, "four")).toBe(false);
+    })
 });
