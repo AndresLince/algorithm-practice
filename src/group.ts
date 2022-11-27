@@ -1,3 +1,5 @@
+import { GroupIterator } from "./groupIterator";
+
 /**
  * Eloquent javascript book | chapter 6 | exercise 2
  * Groups
@@ -37,11 +39,14 @@ export class Group{
     has(value: any) {
         return this.group.indexOf(value) >= 0;
     }
-    from(iterableObject: any) {
+    static from(iterableObject: any) {
         let group = new Group();
         for(let value of iterableObject) {
             group.add(value);
         }
         return group;
+    }
+    [Symbol.iterator]() {
+        return new GroupIterator(this);
     }
 }
