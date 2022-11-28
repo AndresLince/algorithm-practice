@@ -38,7 +38,7 @@ export class Node{
         }
         return newArray;
     }
-    prepend(node: Node, data: number) {
+    static prepend(node: Node, data: number) {
         let head = new Node(data);
         head.next = node;
         return head;
