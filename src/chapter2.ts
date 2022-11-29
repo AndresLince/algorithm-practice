@@ -84,5 +84,60 @@ export class Chapter2 {
         }
         return newLinkedList;
     }
+    /**
+     * 2.5
+     * Sum Lists: You have two numbers represented by a linked list, where each node contains a single
+     * digit. The digits are stored in reverse order, such that the 1 's digit is at the head of the list. Write a
+     * function that adds the two numbers and returns the sum as a linked list.
+     * EXAMPLE
+     * Input:(7-> 1 -> 6) + (5 -> 9 -> 2).That is,617 + 295.
+     * Output: 2 -> 1 -> 9. That is, 912.
+     * FOLLOW UP
+     * Suppose the digits are stored in forward order. Repeat the above problem.
+     * EXAMPLE
+     * lnput:(6 -> 1 -> 7) + (2 -> 9 -> 5).That is,617 + 295.
+     * Output: 9 -> 1 -> 2. That is, 912.
+     */
+    sumLists(node1: Node, node2: Node) {
+        let carry = 0;
+        let arraySum = [];
 
+        let {newNode1, newNode2 } = this.addZeros(node1, node2);
+        while(newNode1 != null && newNode2 != null) {
+            let sum = newNode1.data + newNode2.data + carry;
+            if (sum >= 10) {
+                arraySum.push(sum % 10);
+                carry = 1;
+            } else {
+                arraySum.push(sum);
+                carry = 0;
+            }
+            newNode1 = newNode1.next;
+            newNode2 = newNode2.next;
+        }
+        if (carry > 0) {
+            arraySum.push(carry);
+        }
+
+        return EloquentJavascriptExercises.arrayToList(arraySum);
+    }
+
+    addZeros(node1: Node, node2: Node) {
+        let length1 = node1.len();
+        let length2 = node2.len();
+        let difference = length1 - length2;
+        if (difference < 0) {
+            this.addNumberToLinkedList(node1, 0, Math.abs(difference));
+        }
+        if (difference > 0) {
+            this.addNumberToLinkedList(node2, 0, Math.abs(difference));
+        }
+        return { newNode1: node1, newNode2: node2 }
+    }
+
+    addNumberToLinkedList(node: Node, number: number, times: number) {
+        for (let i = 0; i < Math.abs(times); i++) {
+            node.appendToTail(number);
+        }
+    }
 }
