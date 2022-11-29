@@ -270,9 +270,9 @@ export class EloquentJavascriptExercises {
         list (with zero referring to the first element) or undefined when there
         is no such element.
 
-        If you haven’t already, also write a recursive version of nth.
+        If you haven't already, also write a recursive version of nth.
     */
-    arrayToList(array: Array<number>) {
+    static arrayToList(array: Array<number>) {
         let node: Node = new Node(array[0]);
         for(let i = 1; i < array.length; i++) {
             node.appendToTail(array[i]);
