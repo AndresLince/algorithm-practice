@@ -64,12 +64,12 @@ describe('Chapter1', () => {
         expectedLinkedList.appendToTail(4);
         expectedLinkedList.appendToTail(5);
 
-        expect(exercises.arrayToList([1, 2, 3, 4, 5])).toStrictEqual(expectedLinkedList);
+        expect(EloquentJavascriptExercises.arrayToList([1, 2, 3, 4, 5])).toStrictEqual(expectedLinkedList);
     })
     test('should return a valid linked list for arrayToList([1])', () => {
         let expectedLinkedList = new Node(1);
 
-        expect(exercises.arrayToList([1])).toStrictEqual(expectedLinkedList);
+        expect(EloquentJavascriptExercises.arrayToList([1])).toStrictEqual(expectedLinkedList);
     })
     test('should return a valid array list for listToArray(linkedList)', () => {
         let linkedList = new Node(1);
@@ -82,14 +82,14 @@ describe('Chapter1', () => {
         expect(exercises.listToArray(linkedList)).toStrictEqual(expectedArray);
     })
     test('should return false for deepEqual(linkedList1, linkedList2)', () => {
-        let linkedList = exercises.arrayToList([1, 2, 3, 4, 5]);
-        let linkedList2 = exercises.arrayToList([1, 2, 4, 5, 3]);
+        let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3, 4, 5]);
+        let linkedList2 = EloquentJavascriptExercises.arrayToList([1, 2, 4, 5, 3]);
 
         expect(exercises.deepEqual(linkedList, linkedList2)).toStrictEqual(false);
     })
     test('should return true for deepEqual(linkedList1, linkedList2)', () => {
-        let linkedList = exercises.arrayToList([1, 2, 3, 4, 5]);
-        let linkedList2 = exercises.arrayToList([1, 2, 3, 4, 5]);
+        let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3, 4, 5]);
+        let linkedList2 = EloquentJavascriptExercises.arrayToList([1, 2, 3, 4, 5]);
 
         expect(exercises.deepEqual(linkedList, linkedList2)).toStrictEqual(true);
     })
@@ -97,7 +97,7 @@ describe('Chapter1', () => {
         expect(exercises.deepEqual(null, null)).toStrictEqual(true);
     })
     test('should return false for deepEqual(linkedList1, null)', () => {
-        let linkedList = exercises.arrayToList([1, 2, 3, 4, 5]);
+        let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3, 4, 5]);
 
         expect(exercises.deepEqual(linkedList, null)).toStrictEqual(false);
     })
