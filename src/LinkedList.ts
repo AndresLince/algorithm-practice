@@ -38,10 +38,14 @@ export class Node{
         }
         return newArray;
     }
-    static prepend(node: Node, data: number) {
-        let head = new Node(data);
-        head.next = node;
-        return head;
+    prepend(data: number) {
+        let newHead = new Node(data);
+        let newTail = new Node(0);
+        newTail.data = this.data;
+        newTail.next = this.next;
+        newHead.next = newTail;
+        this.data = newHead.data;
+        this.next = newHead.next;
     }
     nth(node: Node, position: number): Node {
         if(node == null) {
