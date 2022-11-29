@@ -1,3 +1,4 @@
+import { EloquentJavascriptExercises } from "./eloquentjavascript";
 import { Node } from "./LinkedList";
 
 export class Chapter2 {
@@ -74,7 +75,7 @@ export class Chapter2 {
         let newLinkedList = new Node(node.data);
         while (node.next != null) {
             if (node.next.data < partition) {
-                newLinkedList = newLinkedList.prepend(newLinkedList, node.next.data);
+                newLinkedList.prepend(node.next.data);
             } else {
                 newLinkedList.appendToTail(node.next.data);
             }
