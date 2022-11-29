@@ -6,7 +6,8 @@ describe('Linked list', () => {
         expectedLinkedList.appendToTail(2);
 
         let linkedList = new Node(2);
-        expect(Node.prepend(linkedList, 1)).toStrictEqual(expectedLinkedList);
+        linkedList.prepend(1);
+        expect(linkedList).toStrictEqual(expectedLinkedList);
     })
     test('should return a valid linkedList for nth(linkedList, 2)', () => {
         let expectedLinkedList = new Node(3);
