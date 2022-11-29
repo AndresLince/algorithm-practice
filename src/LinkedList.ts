@@ -62,4 +62,13 @@ export class Node{
         }
         return null;
     }
+    len() {
+        let counter = 0;
+        let n: Node = this;
+        while (n != null) {
+            counter++;
+            n = n.next;
+        }
+        return counter;
+    }
 }
