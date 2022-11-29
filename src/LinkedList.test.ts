@@ -1,3 +1,4 @@
+import { EloquentJavascriptExercises } from "./eloquentjavascript";
 import { Node } from "./LinkedList";
 
 describe('Linked list', () => {
@@ -75,5 +76,17 @@ describe('Linked list', () => {
     test('should return null for deleteNode(null, 1)', () => {
         let linkedList = new Node(1);
         expect(linkedList.deleteNode(null, 1)).toStrictEqual(null);
+    })
+    test('should return 1 for len()', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([]);
+        expect(linkedList.len()).toBe(1)
+    })
+    test('should return 1 for len()', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([9]);
+        expect(linkedList.len()).toBe(1)
+    })
+    test('should return 4 for len()', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3 ,4]);
+        expect(linkedList.len()).toBe(4)
     })
 });
