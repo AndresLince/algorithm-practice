@@ -71,4 +71,15 @@ export class Node{
         }
         return counter;
     }
+    revert() {
+        let head: Node = new Node(this.data)
+        head.next = this.next;
+        let newNode = new Node(head.data)
+        while (head.next != null) {
+            newNode.prepend(head.next.data);
+            head = head.next;
+        }
+        this.next = newNode.next;
+        this.data = newNode.data;
+    }
 }
