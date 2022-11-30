@@ -89,4 +89,16 @@ describe('Linked list', () => {
         let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3 ,4]);
         expect(linkedList.len()).toBe(4)
     })
+    test('should return a valid linked list for revert()', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3, 4]);
+        let expectedLinkedList = EloquentJavascriptExercises.arrayToList([4, 3, 2 ,1]);
+        linkedList.revert()
+        expect(linkedList).toStrictEqual(expectedLinkedList);
+    })
+    test('should return a valid linked list for revert()', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([1]);
+        let expectedLinkedList = EloquentJavascriptExercises.arrayToList([1]);
+        linkedList.revert()
+        expect(linkedList).toStrictEqual(expectedLinkedList);
+    })
 });
