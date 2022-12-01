@@ -71,6 +71,14 @@ export class Node{
         }
         return counter;
     }
+    print() {
+        console.log("------------");
+        let n: Node = this;
+        while (n != null) {
+            console.log(n.data);
+            n = n.next;
+        }
+    }
     revert() {
         let head: Node = new Node(this.data)
         head.next = this.next;
