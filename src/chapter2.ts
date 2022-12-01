@@ -1,5 +1,6 @@
 import { EloquentJavascriptExercises } from "./eloquentjavascript";
 import { Node } from "./LinkedList";
+import  { PrependAdder, LinkedListAdder } from './linkedListAdder';
 
 export class Chapter2 {
     removeDups(head: Node) {
@@ -98,7 +99,7 @@ export class Chapter2 {
      * lnput:(6 -> 1 -> 7) + (2 -> 9 -> 5).That is,617 + 295.
      * Output: 9 -> 1 -> 2. That is, 912.
      */
-    sumLists(node1: Node, node2: Node) {
+    sumLists(node1: Node, node2: Node, linkedListAdder: LinkedListAdder) {
         let carry = 0;
         let arraySum = [];
 
@@ -119,7 +120,7 @@ export class Chapter2 {
             arraySum.push(carry);
         }
 
-        return EloquentJavascriptExercises.arrayToList(arraySum);
+        return Node.arrayToList(arraySum, linkedListAdder);
     }
 
     addZeros(node1: Node, node2: Node) {
@@ -139,5 +140,11 @@ export class Chapter2 {
         for (let i = 0; i < Math.abs(times); i++) {
             node.appendToTail(number);
         }
+    }
+    sumListsForwardOrder(node1: Node, node2: Node): Node {
+        node1.revert();
+        node2.revert();
+        var prependAdder = new PrependAdder();
+        return this.sumLists(node1, node2, prependAdder);
     }
 }
