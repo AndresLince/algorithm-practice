@@ -101,4 +101,10 @@ describe('Linked list', () => {
         linkedList.revert()
         expect(linkedList).toStrictEqual(expectedLinkedList);
     })
+    it('should call console.log len() + 1 times for print(linkedList)', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([1, 2, 3, 4]);
+        const logSpy = jest.spyOn(console, 'log');
+        linkedList.print();
+        expect(logSpy).toHaveBeenCalledTimes(linkedList.len() + 1);
+    });
 });
