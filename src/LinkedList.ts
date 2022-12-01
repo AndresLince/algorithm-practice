@@ -1,3 +1,5 @@
+import { LinkedListAdder } from "./linkedListAdder";
+
 export class Node{
     next: Node = null;
     data: number;
@@ -89,5 +91,12 @@ export class Node{
         }
         this.next = newNode.next;
         this.data = newNode.data;
+    }
+    static arrayToList(array: Array<number>, linkedListAdder: LinkedListAdder) {
+        let node: Node = new Node(array[0]);
+        for (let i = 1; i < array.length; i++) {
+            linkedListAdder.addToResult(node, array[i]);
+        }
+        return node;
     }
 }
