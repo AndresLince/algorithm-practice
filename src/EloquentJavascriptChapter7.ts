@@ -88,7 +88,6 @@ export class EJC7 {
             if (state.parcels.length == 0) {
                 console.log(`Done in ${turn} turns`);
                 return turn;
-                break;
             }
             let action = robot(state, memory);
             state = state.move(action.direction);
