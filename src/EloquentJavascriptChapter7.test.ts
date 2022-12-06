@@ -16,4 +16,10 @@ describe('EloquetJavascriptChapter7', () => {
         let resultState = state.move("nonExistDestination");
         expect(state).toStrictEqual(resultState);
     })
+    test('should return a valid response for compareRobots()', () => {
+        let averages = EJC7.compareRobots(EJC7.robotEfficiency, [], EJC7.goalOrientedRobot, []);
+        expect(averages).toHaveProperty("average1");
+        expect(averages).toHaveProperty("average2");
+        expect(averages.average1 < averages.average2).toBe(true);
+    })
 })
