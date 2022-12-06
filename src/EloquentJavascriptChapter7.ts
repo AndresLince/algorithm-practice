@@ -142,4 +142,32 @@ export class EJC7 {
         let average2 = totalTurns2 / 100;
         return { average1, average2 }
     }
+    /**
+     * Robot efficiency
+     * Can you write a robot that finishes the delivery task faster than
+     * goalOrientedRobot? If you observe that robot's behavior, what obviously
+     * stupid things does it do? How could those be improved?
+     * If you solved the previous exercise, you might want to use your
+     * compareRobots function to verify whether you improved the robot.
+     */
+    static robotEfficiency({ place, parcels }, route) {
+        console.log("parcel:", parcels);
+        if (route.length == 0) {
+            //let parcel = parcels[0];
+            let routes = parcels.map(parcel => {
+                if (parcel.place != place) {
+                    route = findRoute(roadGraph, place, parcel.place);
+                    return { route, pickUp: true }
+                } else {
+                    route = findRoute(roadGraph, place, parcel.address);
+                    return { route, pickUp: false }
+                }
+            })
+            function score({route, pickUp}) {
+                return (pickUp? 0.5: 0) - route.length;
+            }
+            route = routes.reduce((a, b) => score(a) > score(b) ? a : b).route;
+        }
+        return { direction: route[0], memory: route.slice(1) };
+    }
 }
