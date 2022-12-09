@@ -2,11 +2,11 @@ import { LinkedListAdder } from "./linkedListAdder";
 
 export class Node{
     next: Node = null;
-    data: number;
-    constructor(data: number) {
+    data: any;
+    constructor(data: any) {
         this.data = data;
     }
-    appendToTail(newData: number): void{
+    appendToTail(newData: any): void{
         let end: Node = new Node(newData);
         let n: Node = this;
         while(n.next != null) {
@@ -15,7 +15,7 @@ export class Node{
         n.next = end;
     }
 
-    deleteNode(head: Node, data: number) {
+    deleteNode(head: Node, data: any) {
         if (head == null) {
             return null;
         }
@@ -40,7 +40,7 @@ export class Node{
         }
         return newArray;
     }
-    prepend(data: number) {
+    prepend(data: any) {
         let newHead = new Node(data);
         let newTail = new Node(0);
         newTail.data = this.data;

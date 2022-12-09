@@ -272,7 +272,7 @@ export class EloquentJavascriptExercises {
 
         If you haven't already, also write a recursive version of nth.
     */
-    static arrayToList(array: Array<number>) {
+    static arrayToList(array: Array<any>) {
         let node: Node = new Node(array[0]);
         for(let i = 1; i < array.length; i++) {
             node.appendToTail(array[i]);
