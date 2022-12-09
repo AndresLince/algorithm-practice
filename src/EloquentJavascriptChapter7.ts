@@ -86,13 +86,11 @@ export class EJC7 {
     static runRobot(state, robot, memory): number {
         for (let turn = 0; ; turn++) {
             if (state.parcels.length == 0) {
-                console.log(`Done in ${turn} turns`);
                 return turn;
             }
             let action = robot(state, memory);
             state = state.move(action.direction);
             memory = action.memory;
-            console.log(`Moved to ${action.direction}`);
         }
     }
 
@@ -151,7 +149,6 @@ export class EJC7 {
      * compareRobots function to verify whether you improved the robot.
      */
     static robotEfficiency({ place, parcels }, route) {
-        console.log("parcel:", parcels);
         if (route.length == 0) {
             //let parcel = parcels[0];
             let routes = parcels.map(parcel => {
