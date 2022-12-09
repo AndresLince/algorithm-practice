@@ -147,4 +147,22 @@ export class Chapter2 {
         var prependAdder = new PrependAdder();
         return this.sumLists(node1, node2, prependAdder);
     }
+    /**
+     * 2.6
+     * Palindrome: Implement a function to check if a linked list is a
+     * palindrome
+     */
+    isPalindrome(linkedList: Node): Boolean {
+        let node = new Node(linkedList.data)
+        node.next = linkedList.next;
+        linkedList.revert();
+        while(node != null) {
+            if (node.data.toLowerCase() != linkedList.data.toLowerCase()) {
+                return false;
+            }
+            node = node.next;
+            linkedList = linkedList.next;
+        }
+        return true;
+    }
 }
