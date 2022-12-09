@@ -80,4 +80,12 @@ describe('Chapter2', () => {
         const expectedResult = EloquentJavascriptExercises.arrayToList([1, 4, 8]);
         expect(chapter2.sumListsForwardOrder(linkedList1, linkedList2)).toStrictEqual(expectedResult);
     })
+    test('should return true for isPalindrome(linkedList)', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList(["D", "a", "b", "a", "l", "e", "a", "r", "r", "o", "z", "a", "l", "a", "z", "o", "r", "r", "a", "e", "l", "a", "b", "a", "d"]);
+        expect(chapter2.isPalindrome(linkedList)).toBe(true);
+    })
+    test('should return false for isPalindrome(linkedList)', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList(["P", "e", "r", "r", "o"]);
+        expect(chapter2.isPalindrome(linkedList)).toBe(false);
+    })
 });
