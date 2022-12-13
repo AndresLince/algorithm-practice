@@ -88,4 +88,19 @@ describe('Chapter2', () => {
         let linkedList = EloquentJavascriptExercises.arrayToList(["P", "e", "r", "r", "o"]);
         expect(chapter2.isPalindrome(linkedList)).toBe(false);
     })
+    test('should return a valid linkedList for isIntersection(linkedList, linkedList2)', () => {
+        let intersectedNode = EloquentJavascriptExercises.arrayToList(["d", "a", "s"]);
+        let linkedList = EloquentJavascriptExercises.arrayToList(["d", "a", "z"]);
+        linkedList.next.next = intersectedNode;
+        let linkedList2 = EloquentJavascriptExercises.arrayToList(["p", "e", "r", "r", "o"]);
+        linkedList2.next.next.next.next = intersectedNode;
+        let intersection = chapter2.isIntersection(linkedList, linkedList2);
+        expect(intersection).toStrictEqual(intersectedNode);
+    })
+    test('should return a null for isIntersection(linkedList, linkedList2)', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList(["a", "b", "c"]);
+        let linkedList2 = EloquentJavascriptExercises.arrayToList(["z", "b", "c"]);
+        let intersection = chapter2.isIntersection(linkedList, linkedList2);
+        expect(intersection).toBe(null);
+    })
 });
