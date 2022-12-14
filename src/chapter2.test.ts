@@ -88,6 +88,9 @@ describe('Chapter2', () => {
         let linkedList = EloquentJavascriptExercises.arrayToList(["P", "e", "r", "r", "o"]);
         expect(chapter2.isPalindrome(linkedList)).toBe(false);
     })
+    test('should return false for isPalindrome(null)', () => {
+        expect(chapter2.isPalindrome(null)).toBe(false);
+    })
     test('should return a valid linkedList for isIntersection(linkedList, linkedList2)', () => {
         let intersectedNode = EloquentJavascriptExercises.arrayToList(["d", "a", "s"]);
         let linkedList = EloquentJavascriptExercises.arrayToList(["d", "a", "z"]);
