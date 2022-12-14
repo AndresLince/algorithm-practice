@@ -153,6 +153,9 @@ export class Chapter2 {
      * palindrome
      */
     isPalindrome(linkedList: Node): Boolean {
+        if (linkedList == null) {
+            return false;
+        }
         let node = new Node(linkedList.data)
         node.next = linkedList.next;
         linkedList.revert();
