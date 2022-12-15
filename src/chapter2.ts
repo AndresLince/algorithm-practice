@@ -191,4 +191,29 @@ export class Chapter2 {
         }
         return null;
     }
+    /**
+     * 2.8
+     * Loop Detection: Given a circular linked list, implement an algorithm
+     * that returns the node at the beginning of the loop.
+     * DEFINITION
+     * Circular linked list: A (corrupt) linked list in which a node's next
+     * pointer points to an earlier node, so as to make a loop in the linked
+     * list.
+     * EXAMPLE
+     * Input: A -> B -> C -> D -> E -> C [the same C as earlier]
+     * Output: C
+     */
+    loopDetection(node: Node) {
+        if (node == null) {
+            return null;
+        }
+        let head = node;
+        while (node.next != null) {
+            if (node.next === head) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
 }
