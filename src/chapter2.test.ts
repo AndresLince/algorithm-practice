@@ -113,12 +113,12 @@ describe('Chapter2', () => {
         linkedList.appendToTail("d");
         linkedList.next.next.next.next = linkedList;
 
-        let intersection = chapter2.loopDetection(linkedList);
-        expect(intersection.next).toStrictEqual(linkedList);
+        let result = chapter2.loopDetection(linkedList);
+        expect(result.next).toStrictEqual(linkedList);
     })
     test('should return a null for loopDetection(linkedList)', () => {
         const linkedList = EloquentJavascriptExercises.arrayToList(["a", "b", "c", "d"]);
-        let intersection = chapter2.loopDetection(linkedList);
-        expect(intersection).toBe(null);
+        let result = chapter2.loopDetection(linkedList);
+        expect(result).toBe(null);
     })
 });
