@@ -106,4 +106,19 @@ describe('Chapter2', () => {
         let intersection = chapter2.isIntersection(linkedList, linkedList2);
         expect(intersection).toBe(null);
     })
+    test('should return a valid linkedList for loopDetection(linkedList)', () => {
+        let linkedList = new Node("a");
+        linkedList.appendToTail("b");
+        linkedList.appendToTail("c");
+        linkedList.appendToTail("d");
+        linkedList.next.next.next.next = linkedList;
+
+        let intersection = chapter2.loopDetection(linkedList);
+        expect(intersection.next).toStrictEqual(linkedList);
+    })
+    test('should return a null for loopDetection(linkedList)', () => {
+        const linkedList = EloquentJavascriptExercises.arrayToList(["a", "b", "c", "d"]);
+        let intersection = chapter2.loopDetection(linkedList);
+        expect(intersection).toBe(null);
+    })
 });
