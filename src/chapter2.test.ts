@@ -121,4 +121,8 @@ describe('Chapter2', () => {
         let result = chapter2.loopDetection(linkedList);
         expect(result).toBe(null);
     })
+    test('should return a null for loopDetection(linkedList)', () => {
+        let result = chapter2.loopDetection(null);
+        expect(result).toBe(null);
+    })
 });
