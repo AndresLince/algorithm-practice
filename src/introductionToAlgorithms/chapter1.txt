@@ -2,3 +2,11 @@ Exercises
 1.1-1
 A real world example that requeres sorting is orderin school students on the
 basis of marks and grades.
+
+1.1-2
+Other than speed, the other measures of efficiency that one use in a real-world
+setting are:
+Memory usage
+Cache locality
+Disk seeks
+Bandwidth
