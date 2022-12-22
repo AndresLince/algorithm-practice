@@ -99,4 +99,18 @@ export class Node{
         }
         return node;
     }
+    getMin() {
+        let node: Node = this;
+        if (node == null) {
+            return null;
+        }
+        let minNode = node;
+        while (node != null) {
+            if (node.data < minNode.data) {
+                minNode = node;
+            }
+            node = node.next;
+        }
+        return minNode;
+    }
 }
