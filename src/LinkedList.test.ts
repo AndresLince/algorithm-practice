@@ -107,4 +107,8 @@ describe('Linked list', () => {
         linkedList.print();
         expect(logSpy).toHaveBeenCalledTimes(linkedList.len() + 1);
     });
+    it('should return a valid linked list for getMin(linkedList)', () => {
+        let linkedList = EloquentJavascriptExercises.arrayToList([2, 3, 4, 1, 5, 6]);
+        expect(linkedList.getMin().data).toBe(1);
+    });
 });
