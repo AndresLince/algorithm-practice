@@ -36,4 +36,21 @@ describe('MyStack tests', () => {
         stack.push(4);
         expect(stack.peak()).toBe(4);
     })
+    test('stack should return a valid value for getMin()', () => {
+        const stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.pop();
+        stack.push(4);
+        expect(stack.getMin()).toBe(1);
+    })
+    test('stack should return a valid value for getMin()', () => {
+        const stack = new MyStack();
+        stack.push(3);
+        stack.push(4);
+        stack.push(1);
+        stack.pop();
+        expect(stack.getMin()).toBe(3);
+    })
 })
