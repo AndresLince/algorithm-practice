@@ -43,10 +43,11 @@ export class SetOfStacks {
         if (!this.array[this.arrayIndex] && this.arrayIndex == 0) {
             throw new Error("EmptyStackException");
         }
-        let data = this.array[this.arrayIndex].pop();
         if (this.array[this.arrayIndex].isEmpty() && this.arrayIndex != 0) {
             this.arrayIndex--;
+            return this.pop();
         }
+        let data = this.array[this.arrayIndex].pop();
         return data;
     }
     peak() {
@@ -57,5 +58,11 @@ export class SetOfStacks {
     }
     isEmpty() {
         return this.array[this.arrayIndex].isEmpty()
+    }
+    popAt(index: number) {
+        if (this.array[index]) {
+            return this.array[index].pop();
+        }
+        throw new Error("EmptyStackException");
     }
 }
