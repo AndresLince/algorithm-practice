@@ -47,4 +47,8 @@ export class MyStack{
     getMin() {
         return this.min.data;
     }
+
+    length(): number {
+        return this.top.len();
+    }
 }
