@@ -49,6 +49,9 @@ export class MyStack{
     }
 
     length(): number {
+        if (this.top == null) {
+            return 0;
+        }
         return this.top.len();
     }
 }
