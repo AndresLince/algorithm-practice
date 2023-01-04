@@ -63,4 +63,8 @@ describe('MyStack tests', () => {
         stack.pop();
         expect(stack.length()).toBe(4);
     })
+    test('stack should return a valid value for length()', () => {
+        const stack = new MyStack();
+        expect(stack.length()).toBe(0);
+    })
 })
