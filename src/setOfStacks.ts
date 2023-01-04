@@ -33,19 +33,26 @@ export class SetOfStacks {
         if (this.array[this.arrayIndex].length() == this.threshold) {
             let stack = new MyStack();
             stack.push(data);
+            this.arrayIndex++;
             this.array[this.arrayIndex] = stack;
             return;
         }
         this.array[this.arrayIndex].push(data)
     }
     pop(): any {
+        if (!this.array[this.arrayIndex] && this.arrayIndex == 0) {
+            throw new Error("EmptyStackException");
+        }
         let data = this.array[this.arrayIndex].pop();
         if (this.array[this.arrayIndex].isEmpty() && this.arrayIndex != 0) {
             this.arrayIndex--;
         }
         return data;
     }
-    peek() {
+    peak() {
+        if (!this.array[this.arrayIndex]) {
+            throw new Error("EmptyStackException");
+        }
         return this.array[this.arrayIndex].peak();
     }
     isEmpty() {
