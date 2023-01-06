@@ -65,3 +65,12 @@ end point with no stipulations on which or how many points must be traversed
 from beginning to end. The travelling salesman problem instead cares about
 hitting every destination along the way while ending at the original beginning
 point - this difference complicates the problem greatly.
+
+1.1-5
+Real worl problems:
+
+Best solution: The problem to handle with the autonomous mix of components for
+medicines should be the best
+
+Good enough: The problem that shows the movement of a bus in real time to take
+the bus needs to be good but not perfect.
