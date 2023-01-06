@@ -42,3 +42,26 @@ extra memory is required for the back pointer hence, there is a wastage of
 memory.
 Random Access: Random access is not possible in a linked list due to its
 dynamic memory allocation.
+
+1.1-4
+The shortest path problem involves finding the shortest path between two
+vertices (or nodes) in a graph. Algorithms such as the Floyd-Warshall algorithm
+and different variations of Dijkstra's algorithm are used to find solutions to
+the shortest path problem. Applications of the shortest path problem include
+those in road networks, logistics, communications, electronic design, power
+grid contingency analysis, and community detection.
+
+The traveling salesman problem (TSP) is an algorithmic problem tasked with
+finding the shortest route between a set of points and locations that must be
+visited. In the problem statement, the points are the cities a salesperson
+might visit.
+
+They are similar in that they both deal with a map and care about the distance
+between points (cities and roads for example). Additionally, each problem seeks
+to produce a route that minimizes distance.
+
+They differ in that the shortest-path problem has a defined beginning point and
+end point with no stipulations on which or how many points must be traversed
+from beginning to end. The travelling salesman problem instead cares about
+hitting every destination along the way while ending at the original beginning
+point - this difference complicates the problem greatly.
