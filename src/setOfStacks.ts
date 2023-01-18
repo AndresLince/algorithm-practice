@@ -2,7 +2,7 @@ import { MyStack } from "./mystack";
 
 export class SetOfStacks {
     /**
-     * 3.2
+     * 3.3
      * Stack of Plates: Imagine a (literal) stack of plates. If the stack gets
      * too high, it might topple. Therefore, in real life, we would likely
      * start a new stack when the previous stack exceeds some threshold.
