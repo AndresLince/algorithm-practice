@@ -19,14 +19,11 @@ export class EJC8 {
     }
     reliableMultiply(a: number, b: number) {
         try {
-            const result = this.primitiveMultiply(a, b);
-            return result;
+            return this.primitiveMultiply(a, b);
         } catch (error) {
             if (error instanceof MultiplicatorUnitFailure){
                 console.log("MultiplicatorUnitFailure Error");
                 return this.reliableMultiply(a, b);
-            } else {
-                throw error
             }
         }
     }
