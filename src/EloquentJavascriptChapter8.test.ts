@@ -2,6 +2,11 @@ import { EJC8 } from "./EloquentJavascriptChapter8"
 
 describe('EloquentJavascriptChapter8', () => {
     const ejc8 = new EJC8();
+    beforeEach(() => {
+        ejc8.box.unlock();
+        ejc8.box._content = [];
+        ejc8.box.lock();
+    });
     test('should return a valid value for reliableMultiply ', () => {
         const result = ejc8.reliableMultiply(8,8);
         expect(result).toBe(64);
