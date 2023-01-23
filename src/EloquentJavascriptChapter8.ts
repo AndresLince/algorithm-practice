@@ -58,10 +58,10 @@ export class EJC8 {
             return this._content;
         }
     };
-    withBoxUnlocked(body) {
+    withBoxUnlocked(body: Function) {
         try {
             this.box.unlock();
-            return body();
+            return body(this.box);
         } catch (error) {
             throw error;
         } finally{
