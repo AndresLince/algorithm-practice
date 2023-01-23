@@ -27,4 +27,14 @@ describe('EloquentJavascriptChapter8', () => {
             })
         }).toThrow("Pirates on the horizon! Abort!");
     })
+    test('should return a valid value for withBoxUnlocked() ', () => {
+        ejc8.box.unlock();
+        ejc8.withBoxUnlocked((box) => {
+            box.content.push("gold piece");
+        });
+        expect(function () { ejc8.box.content }).toThrow("Locked!");
+        ejc8.box.unlock();
+        expect(ejc8.box._content.length).toBe(1);
+        expect(ejc8.box._content[0]).toBe("gold piece");
+    })
 })
