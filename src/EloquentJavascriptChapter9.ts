@@ -27,6 +27,10 @@ export class EJC9 {
                 regexp = /ca[tr]/
                 validation = this.verify(regexp, ["my car", "bad cats"], ["camper", "high art"]);
                 break;
+            case 2:
+                regexp = /pr?op/
+                validation = this.verify(regexp, ["pop culture", "mad props"], ["plop", "prrrop"]);
+                break;
             case 8:
                 regexp = /ca[tr]/
                 validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"]);
