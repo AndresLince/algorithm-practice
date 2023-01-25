@@ -21,10 +21,19 @@
 export class EJC9 {
     codeGolf(exercise: number) {
         let validation = false;
+        let regexp: RegExp;
         switch (exercise) {
             case 1:
-                const regexp = /ca[tr]/
+                regexp = /ca[tr]/
                 validation = this.verify(regexp, ["my car", "bad cats"], ["camper", "high art"])
+                break;
+            case 8:
+                regexp = /ca[tr]/
+                validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"])
+                break;
+            case 9:
+                regexp = /ca[tr]/
+                validation = this.verify(regexp, ["my car", "bad cats"], ["my car", "bad cats"])
                 break;
             default:
                 break;
