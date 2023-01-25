@@ -22,4 +22,8 @@ describe('EloquentJavascriptChapter9', () => {
         const validation = ejc9.codeGolf(2);
         expect(validation).toBe(true);
     })
+    test('should return true for codeGolf(3)', () => {
+        const validation = ejc9.codeGolf(3);
+        expect(validation).toBe(true);
+    })
 })
