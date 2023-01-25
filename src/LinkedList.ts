@@ -101,9 +101,6 @@ export class Node{
     }
     getMin() {
         let node: Node = this;
-        if (node == null) {
-            return null;
-        }
         let minNode = node;
         while (node != null) {
             if (node.data < minNode.data) {
