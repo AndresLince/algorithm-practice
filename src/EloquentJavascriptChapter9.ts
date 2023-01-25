@@ -31,6 +31,10 @@ export class EJC9 {
                 regexp = /pr?op/
                 validation = this.verify(regexp, ["pop culture", "mad props"], ["plop", "prrrop"]);
                 break;
+            case 3:
+                regexp = /ferr[y|et|ari]/
+                validation = this.verify(regexp, ["ferret", "ferry", "ferrari"], ["ferrum", "transfer A"]);
+                break;
             case 8:
                 regexp = /ca[tr]/
                 validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"]);
