@@ -25,15 +25,15 @@ export class EJC9 {
         switch (exercise) {
             case 1:
                 regexp = /ca[tr]/
-                validation = this.verify(regexp, ["my car", "bad cats"], ["camper", "high art"])
+                validation = this.verify(regexp, ["my car", "bad cats"], ["camper", "high art"]);
                 break;
             case 8:
                 regexp = /ca[tr]/
-                validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"])
+                validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"]);
                 break;
             case 9:
                 regexp = /ca[tr]/
-                validation = this.verify(regexp, ["my car", "bad cats"], ["my car", "bad cats"])
+                validation = this.verify(regexp, ["my car", "bad cats"], ["my car", "bad cats"]);
                 break;
             default:
                 break;
