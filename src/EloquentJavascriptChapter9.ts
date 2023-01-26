@@ -43,6 +43,10 @@ export class EJC9 {
                 regexp = / [.,';]/
                 validation = this.verify(regexp, ["bad punctuation ."], ["escape the period"]);
                 break;
+            case 6:
+                regexp = /\w{6,}/
+                validation = this.verify(regexp, ["Siebentausenddreihundertzweiundzwanzig"], ["no", "three small words"]);
+                break;
             case 8:
                 regexp = /ca[tr]/
                 validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"]);
