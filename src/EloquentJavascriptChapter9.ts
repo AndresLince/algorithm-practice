@@ -32,11 +32,11 @@ export class EJC9 {
                 validation = this.verify(regexp, ["pop culture", "mad props"], ["plop", "prrrop"]);
                 break;
             case 3:
-                regexp = /ferr[y|et|ari]/
+                regexp = /ferr(y|et|ari)/
                 validation = this.verify(regexp, ["ferret", "ferry", "ferrari"], ["ferrum", "transfer A"]);
                 break;
             case 4:
-                regexp = /ious$|ious /
+                regexp = /ious\b/
                 validation = this.verify(regexp, ["how delicious", "spacious room"], ["ruinous", "consciousness"]);
                 break;
             case 5:
@@ -44,7 +44,7 @@ export class EJC9 {
                 validation = this.verify(regexp, ["bad punctuation ."], ["escape the period"]);
                 break;
             case 6:
-                regexp = /\w{6,}/
+                regexp = /\w{7}/
                 validation = this.verify(regexp, ["Siebentausenddreihundertzweiundzwanzig"], ["no", "three small words"]);
                 break;
             case 7:
