@@ -39,6 +39,10 @@ export class EJC9 {
                 regexp = /ious$|ious /
                 validation = this.verify(regexp, ["how delicious", "spacious room"], ["ruinous", "consciousness"]);
                 break;
+            case 5:
+                regexp = / [.,';]/
+                validation = this.verify(regexp, ["bad punctuation ."], ["escape the period"]);
+                break;
             case 8:
                 regexp = /ca[tr]/
                 validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"]);
