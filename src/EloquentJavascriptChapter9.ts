@@ -47,6 +47,10 @@ export class EJC9 {
                 regexp = /\w{6,}/
                 validation = this.verify(regexp, ["Siebentausenddreihundertzweiundzwanzig"], ["no", "three small words"]);
                 break;
+            case 7:
+                regexp = /\b[^\We]+\b/i
+                validation = this.verify(regexp, ["red platypus", "wobbling nest"], ["earth bed", "learning ape", "BEET"]);
+                break;
             case 8:
                 regexp = /ca[tr]/
                 validation = this.verify(regexp, ["camper", "high art"], ["my car", "bad cats"]);
