@@ -84,7 +84,7 @@ export class EJC9 {
      * Think of a pattern that distinguishes these two kinds of quote usage and
      * craft a call to the replace method that does the proper replacement.
      */
-    quotingStyle(text: string) {
+    quotingStyle(text: string): string {
         return text.replace(/(^|\W)'|'(\W|$)/g, '$1"$2');
     }
 }
