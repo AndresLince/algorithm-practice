@@ -85,8 +85,6 @@ export class EJC9 {
      * craft a call to the replace method that does the proper replacement.
      */
     quotingStyle(text: string) {
-        text = text.replace(/^'|'$/g, '"')
-        text = text.replace(/(')( )/g, '"$2')
-        return text.replace(/( )(')/g, '$1"');
+        return text.replace(/(^|\W)'|'(\W|$)/g, '$1"$2');
     }
 }
