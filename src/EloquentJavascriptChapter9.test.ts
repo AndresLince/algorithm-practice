@@ -48,4 +48,8 @@ describe('EloquentJavascriptChapter9', () => {
         const expectedText = "\"I'm the cook,\" he said, \"it's my job.\""
         expect(result).toBe(expectedText);
     })
+    test('should return true for numbersAgain()', () => {
+        const result = ejc9.numbersAgain();
+        expect(result).toBe(true);
+    })
 })
