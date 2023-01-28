@@ -42,4 +42,10 @@ describe('EloquentJavascriptChapter9', () => {
         const validation = ejc9.codeGolf(7);
         expect(validation).toBe(true);
     })
+    test('should return true for quotingStyle(text)', () => {
+        const text = "'I'm the cook,' he said, 'it's my job.'";
+        const result = ejc9.quotingStyle(text);
+        const expectedText = "\"I'm the cook,\" he said, \"it's my job.\""
+        expect(result).toBe(expectedText);
+    })
 })
